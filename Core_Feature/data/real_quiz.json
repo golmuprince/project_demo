@@ -1,0 +1,602 @@
+[
+  {
+    "number": 1,
+    "topic": "1주차: 리눅스 시스템 이해, 기본 설치",
+    "question": "┌──────────────────────────────┐\n다음 중 LVM 구성할 때 가장 먼저 생성되는 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) VG(Volume Group)",
+      "B) LV(Logical Volume)",
+      "C) PV(Physical Volume)",
+      "D) PE(Physical Extend)"
+    ],
+    "correct_answer": "C",
+    "explanation": "PV-VG-LV 순서 PE는 순서에는 들어가지 않습니다 .    PV (Physical Volume): 물리적 디스크를 LVM에 사용할 준비를 함 (가장 먼저 생성). VG (Volume Group): 여러 PV를 묶어 저장 공간 풀을 만듦. LV (Logical Volume): VG에서 원하는 크기로 논리 볼륨 생성. PE (Physical Extent): VG 내부의 작은 블록 단위. LVM은 디스크 공간을 효율적으로 관리하고 유연한 확장성을 제 공하기 때문에 서버 환경에서 매우 유용합니다 .  "
+  },
+  {
+    "number": 2,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 프린터 큐의 작업 정보를 확인하는 명령어로 알맞은 \n것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) lp",
+      "B) lpr",
+      "C) lprm",
+      "D) lpstat"
+    ],
+    "correct_answer": "D",
+    "explanation": "프린트 큐 확인 lpq, lpstat    lp : /dev/lp 사용 - 프린터 디바이스 path를 사용하여 직접 인쇄 - EX) cat test.txt > /dev/lp lpr : 인쇄 작업을 수행 lprm : 프린터 큐의 작업을 삭제할 때 사용 lpstat: 프린터 큐 상태 및 작업 목록을 확인하는 명령어 (정답). lp / lpr: 출력 요청. lprm: 대기 중인 작업 제거.  "
+  },
+  {
+    "number": 3,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 스캐너 사용과 관련된 프로그램으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ALSA",
+      "B) CUPS",
+      "C) SANE",
+      "D) LPRng"
+    ],
+    "correct_answer": "C",
+    "explanation": "ALSA: Advanced Linux Sound Architecture 스피커 CUPS: Common UNIX Printing System 프린터 SANE: Scanner Access Now Easy 스캐너 LPRng: Line Printer next generation 프린터 스캐너 프로그램은 S로 시작한다고 외웁시다 .GUI포함인 Xsane 이 나오는 경우도 있긴 합니다 .   "
+  },
+  {
+    "number": 4,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 데비안 계열 리눅스에서 환경 설정 파일도 포함해서 vsftpd 패키지를 제거하는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) apt-get purge vsftpd",
+      "B) apt-get remove vsftpd",
+      "C) apt-get erase vsftpd",
+      "D) apt-get delete vsftpd"
+    ],
+    "correct_answer": "A",
+    "explanation": "환경설정까지 삭제 = purge    remove: 패키지 제거  purge = 환경설정까지 다 지움 remove = remove 랑 erase 는 동일한 기능 수행. 환경설정파일 은 남겨둠 . erase = remove delete = 유효하지 않은 명령어    apt-get purge vsftpd: 패키지와 환경 설정 파일까지 제거. (정 답) apt-get remove vsftpd: 패키지만 제거, 환경 설정 파일은 유 지. APT는 데비안 계열 리눅스의 핵심 패키지 관리 도구로 , 설치/제 거 옵션을 적절히 선택하는 것이 중요합니다 .  "
+  },
+  {
+    "number": 5,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 rpm 명령으로 의존성이 있는 패키지를 제거하는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) rpm -d nmap --nodeps",
+      "B) rpm -e nmap --nodeps",
+      "C) rpm erase nmap --nodeps",
+      "D) rpm delete nmap -nodeps"
+    ],
+    "correct_answer": "B",
+    "explanation": "의존성 패키지 제거 옵션은 '--nodeps' rpm의 패키지 제거 옵션은 '-e'   "
+  },
+  {
+    "number": 6,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음은 확장 패키지 관련 저장소를 설치하는 과정이다 . (괄호) 안에 들어갈 내용으로 알맞은 것은?\n└──────────────────────────────┘\n# yum install (괄호)\n",
+    "options": [
+      "A) epel",
+      "B) epel-repository",
+      "C) epel-release",
+      "D) epel-download"
+    ],
+    "correct_answer": "C",
+    "explanation": ".  epel-release 는 Extra Packages for Enterprise Linux Release의 약자로, EPEL(Extra Packages for Enterprise Linux)저장소의 구성 파일과 공개 키를 포함하는 패키지입니다1. EPEL은 Fedora Project에서 제공하는 저장소로, 각종 패키지의 최신 버전을 제공하는 커뮤니티 기반의 저장소입니다.epel-release 패키지를 설치하면 yum 과 같은 도구를 사용하여 EPEL 저장소에서 패키지와 의존성 패키지를 설치할 수 있습니다. epel-repository 는 존재하지 않는 패키지 이름입니다.EPEL저장소를 추가하려면 epel-release 패키지를 설치해야 합니다. epel 는 Extra Packages for Enterprise Linux의 약자로,EPEL 저장소의 이름입니다.epel 패키지는 존재하지 않습니다.EPEL 저장소를 추가하려면 epel-release 패키지를 설치해야합니다. epel-download 는 존재하지 않는 패키지 이름입니다.EPEL저장소에서 패키지를 다운로드하려면 yum 명령어를 사용해야합니다"
+  },
+  {
+    "number": 7,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 프로그램을 소스 파일로 설치하는 과정으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) configure → make → make install",
+      "B) make → configure → make install",
+      "C) make → make install → configure",
+      "D) make install → configure → make"
+    ],
+    "correct_answer": "A",
+    "explanation": "configure: 소스 코드를 컴파일하기 전에 시스템 환경을 검사 -> Makefile 생성 make: Makefile 에 기록된 지시에 따라 소스 코드를 컴파일하고 실행 파일을 생성 make install: 컴파일된 프로그램을 시스템의 적절한 위치에 설 치   "
+  },
+  {
+    "number": 8,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 리눅스에서 사용되는 온라인 패키지 관리 도구로 거리가 먼 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) dnf",
+      "B) rpm",
+      "C) zypper",
+      "D) apt-get"
+    ],
+    "correct_answer": "B",
+    "explanation": "dnf - 페도라 온라인 패키지 관리 도구 rpm - 레드햇 오프라인 패키지 관리 도구 zypper - 수세 온라인 패키지 관리 도구 apt-get - 데비안 온라인 패키지 관리 도구   "
+  },
+  {
+    "number": 9,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 레드햇 계열 리눅스에서 사용되는 패키지 관리 도구로 거리가 먼 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) dnf",
+      "B) rpm",
+      "C) zypper",
+      "D) yum"
+    ],
+    "correct_answer": "C",
+    "explanation": "dnf - 페도라 rpm - 레드햇 zypper - 수세 yum - 레드햇 페도라가 레드햇 계열. 수세는 남남.   "
+  },
+  {
+    "number": 10,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음중 vi 편집기의 ex 명령모드에 대한 설명으로 틀린 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) w → 작업중인 내용을 저장한다 .",
+      "B) w 파일명 → 지정한 '파일명 '으로 저장한다 .",
+      "C) wq → 변경된 내용을 저장하고 종료한다 .",
+      "D) q → 수정된 사항이 있어도 무조건 종료한다 ."
+    ],
+    "correct_answer": "D",
+    "explanation": "수정사항을 무시하고 저장하지 않고 강제종료는 'q!'   "
+  },
+  {
+    "number": 11,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 (괄호) 안에 들어갈 내용으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ㉠ /, ㉡ n",
+      "B) ㉠ ?, ㉡ n",
+      "C) ㉠ /, ㉡ N",
+      "D) ㉠ ?, ㉡ N"
+    ],
+    "correct_answer": "A",
+    "explanation": "/ => 검색어 입력 n => 검색어를 찾은 다음 위치로 이동 N => 검색어로 찾은 이전 위치로 이동  /(문자열 ) => 커서 위치부터 순방향 (아래)로 문자열 검색 ?(문자열 ) => 커서 위치부터 순방향 (위)로 문자열 검색 n => 원래 찾던 방향으로 다음 문자열을 찾는다 (다음 위치로 이동) N => 역방향으로 다음 문자열을 찾는다 (이전 위치로 이동) ]"
+  },
+  {
+    "number": 12,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 vi 편집기에서 linux로 끝나는 줄의 마지막에 마침표(.)을 덧붙이도록 치환하는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) :% s/linux./linux$/",
+      "B) :% s/linux$/linux./",
+      "C) :% s/linux/linux./",
+      "D) :% s/linux/linux$/"
+    ],
+    "correct_answer": "B",
+    "explanation": "%: 전체 파일의 범위를 나타내는 특수 기호입니다 .이 경우에는 파일 전체에서 찾고자 하는 패턴을 검색하게 됩니다 . s: substitute( 치환)을 나타내는 명령입니다 .찾은 패턴을 대체 문자열로 바꾸는 역할을 합니다 . linux$: 찾을 패턴을 나타냅니다 .여기서 $는 줄의 끝을 의미하 며, \"linux\" 로 끝나는 부분을 찾게 됩니다 . linux.: 찾은 패턴을 대체할 문자열을 나타냅니다 .여기서는 \"linux\" 로 끝나는 부분에 마침표 (.)를 추가하도록 지정되어 있습니다."
+  },
+  {
+    "number": 13,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 emacs 편집기를 개발한 인물로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) 빌 조이",
+      "B) 리처드 스톨만",
+      "C) 브람 브레나르",
+      "D) 귀도 반 로섬"
+    ],
+    "correct_answer": "B",
+    "explanation": "빌 조이 - vi 리처드 스톨만 - emacs 브람 브레나르 - vim 귀도 반 로섬 - IDLE(python 개발 환경)"
+  },
+  {
+    "number": 14,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 nano 편집기에서 현재 커서가 위치한 줄의 처음으로 이동할 때 사용하는 키 조합으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) [Ctrl]+[a]",
+      "B) [Ctrl]+[e]",
+      "C) [Ctrl]+[o]",
+      "D) [Ctrl]+[i]"
+    ],
+    "correct_answer": "A",
+    "explanation": "[Ctrl]+[a]: 현재 행의 시작 부분으로 커서를 이동 [Ctrl]+[e]: 현재 행의 끝 부분으로 커서를 이동 [Ctrl]+[o]: 파일을 저장하고 나가기 위해 사용 (저장: Write Out) [Ctrl]+[i]: 탭을 삽입합니다 .(탭: Insert Tab) "
+  },
+  {
+    "number": 15,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 X 윈도 환경에서만 사용 가능한 편집기로 알맞은것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) nano",
+      "B) pico",
+      "C) kwrite",
+      "D) vim"
+    ],
+    "correct_answer": "C",
+    "explanation": "kwrite : X윈도 환경에서만 사용 가능"
+  },
+  {
+    "number": 16,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 작업번호가 2번인 백그라운드 프로세스를 종료시키는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) kill 2",
+      "B) kill %2",
+      "C) kill -j 2",
+      "D) kill -b 2"
+    ],
+    "correct_answer": "B",
+    "explanation": "정답 kill %2 : 현재 쉘 세션에서 2번째 백그라운드 작업을 종료 그외 kill 2 : PID가 2인 프로세스 종료 나머지는 정규화된 옵션이 아님    kill : 종료를 의미 %2 : 작업 2번을 의미 답 : kill %2 : 작업번호가 2번인 백그라운드 프로세스를 종료시 키는 명령"
+  },
+  {
+    "number": 17,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "ps 명령의 상태(STAT) 코드 중에 작업은 종료되었으나 부\n모프로세스에 의해 회수되지 않아 메모리를 차지하고 상태\n를 나타내는 값으로 알맞은 것은?",
+    "options": [
+      "A) R",
+      "B) S",
+      "C) T",
+      "D) Z"
+    ],
+    "correct_answer": "D",
+    "explanation": "- R (Running): 프로세스가 현재 실행 중인 상태 - S (Sleeping): 프로세스가 현재 실행 대기 중인 상태. - T (Stopped): 프로세스가 현재 중지된 상태. - Z (Zombie): 프로세스가 종료되었지만 부모 프로세스가 아직 종료 상태를 확인하지 않은 상태."
+  },
+  {
+    "number": 18,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 프로세스 관련 명령어로 설정 가능한 NI 값의 범위로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) -19 ~ 19",
+      "B) -19 ~ 20",
+      "C) -20 ~ 19",
+      "D) -20 ~ 20"
+    ],
+    "correct_answer": "C",
+    "explanation": "NI 기본값 0 , -20~19 까지 지정가능 [해설작성자 : 라쿠니 ] -20에서 19까지로 설정할 수 있습니다 . -20: 가장 높은 우선순위 (Nice 값이 작을수록 우선순위가 높음). 19: 가장 낮은 우선순위 (Nice 값이 클수록 우선순위가 낮음)."
+  },
+  
+  
+  {
+    "number": 19,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 포어그라운드 프로세스를 종료하기 위해 사용하는 키 조합으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) [Ctrl]+[c]",
+      "B) [Ctrl]+[a]",
+      "C) [Ctrl]+[z]",
+      "D) [Ctrl]+[d]"
+    ],
+    "correct_answer": "A",
+    "explanation": "[Ctrl]+[c]: 현재 실행 중인 프로세스를 종료. 보통은 프로세스 를 강제 종료하고자 할 때 사용. [Ctrl]+[a]: 현재 입력 라인의 시작 부분으로 커서를 이동.[Ctrl]+[z]: 현재 실행 중인 프로세스를 일시 중지. 프로세스를 백그라운드로 이동하고 터미널 제어권을 반환합니다 . [Ctrl]+[d]: 현재 터미널 세션을 종료. 보통은 로그아웃하고자 할 때 사용. "
+  },
+  {
+    "number": 20,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 standalone 방식과 inetd 방식에 대한 비교 설명으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) inetd 방식이 standalone 방식보다 메모리 관리가 더 효 율적이다 .",
+      "B) inetd 방식이 standalone 방식보다 관련 서비스 처리가 빠르다 .",
+      "C) 웹과 같은 빈번한 요청이 들어오는 서비스는 inetd 방식 이 적합하다 .",
+      "D) 사용자가 많은 서비스는 standalone 방식보다 inetd 방 식이 적합하다 ."
+    ],
+    "correct_answer": "A",
+    "explanation": "standalone: 대기하고있다가 요청이 발생하면 즉각 처리 (빈번 한 요청이 발생하는 서비스에 적합) inetd: 평상시에 잠자고 있다가 요청이 올때만 구동 (메모리 관리가 효율적 )"
+  },
+  {
+    "number": 21,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 사용자가 본인이 실행한 백그라운드 프로세스 목록을 확인하는 명령어로 가장 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ps",
+      "B) bg",
+      "C) jobs",
+      "D) exec"
+    ],
+    "correct_answer": "C",
+    "explanation": "ps : 현재 실행 중인 프로세스 bg : 중지된 (background) 작업을 다시 실행 jobs : 현재 셸에서 실행 중인 작업의 목록(백그라운드 , 포그라 운드 모두 표시) exec : 셸 스크립트가 다른 프로세스로 대체 "
+  },
+  {
+    "number": 22,
+    "topic": "4주차: 프로세스 관리, 패키지 관리",
+    "question": "┌──────────────────────────────┐\n다음 보기의 시그널을 번호값이 낮은 순부터 높은 순으로 정렬했을 때 세 번째에 해당하는 시그널 이름으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) SIGTSTP",
+      "B) SIGKILL",
+      "C) SIGINT",
+      "D) SIGTERM"
+    ],
+    "correct_answer": "D",
+    "explanation": "SIGTSTP - 20 : Terminal Stop Signal (POSIX) SIGKILL - 9 : Kill(can't be caught or ignored) (POSIX) SIGINT - 2 : Terminal Interrupt (ANSI) SIGTERM - 15 : Termination (ANSI)"
+  },
+  {
+    "number": 23,
+    "topic": "6주차: 보안 관리, 쉘 스크립트",
+    "question": "┌──────────────────────────────┐\n다음 중 가장 최근에 실행한 명령을 재실행할 때 사용하는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) !0",
+      "B) !1",
+      "C) !!",
+      "D) history -1"
+    ],
+    "correct_answer": "C",
+    "explanation": "!!: 명령은 가장 최근에 실행한 명령을 재실행 !0: 이전에 실행한 명령 중 첫 번째 명령을 재실행합니다 .0은 첫 번째 명령을 나타냅니다 . !1: 이전에 실행한 명령 중 두 번째 명령을 재실행합니다 .1은 두 번째 명령을 나타냅니다 . history -1: 최근에 실행한 명령의 히스토리를 출력합니다 .-1은 가장 최근에 실행한 명령을 나타냅니다 . 그러므로 3번입니다 . "
+  },
+  {
+    "number": 24,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 /etc/fstab 파일의 첫 번째 필드에 설정할 수 있는 값으로 틀린 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) UUID",
+      "B) LABEL",
+      "C) 마운트 포인트",
+      "D) 장치 파일명"
+    ],
+    "correct_answer": "C",
+    "explanation": "장치명 =/dev=UUID, 라벨명 , 네트워크 주소, 파일명  마운틴 포인트는 \"/etc/fstab\" 파일의 두 번째 필드에 설정됨 "
+  },
+  {
+    "number": 25,
+    "topic": "2주차: 기본 명령어, 파일 관리",
+    "question": "┌──────────────────────────────┐\n다음중 fdisk 작업 후에 변경된 파티션 정보를 저장하고 종료하는 명령어로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) n",
+      "B) w",
+      "C) x",
+      "D) q"
+    ],
+    "correct_answer": "B",
+    "explanation": "n(new) - 새로운 파티션 생성 w(write) - 파티션 정보 저장하고 종료 q(quit) - 저장 안하고 종료  x(expert mode) - 전문가 모드로 진입 "
+  },
+  {
+    "number": 26,
+    "topic": "3주차: 사용자/그룹 관리, 권한 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 설정된 umask 값이 0022일 경우 생성되는 파일의 허가권 값으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) -rw-r--r--",
+      "B) -rw-rw-r--",
+      "C) -rwxr-xr-x",
+      "D) -rwxrwxr-x"
+    ],
+    "correct_answer": "A",
+    "explanation": "umask 는 권한을 제한하며 해당 문제는 파일이기 때문에 666으 로 최대권한으로써 666-022 = 644 r = 4, w = 2, x = 1 으로 rw(6)-r(4)-r(4) 1번이 정답이 맞습 니다.   파일 기본 권한(666) 따라서 666 - 022 = 644 디렉토리 기본 권한(777) 따라서 777 - 022 = 755해당 문제는 파일이기 때문에 1번이 정답이 맞습니다 .   "
+  },
+  {
+    "number": 27,
+    "topic": "3주차: 사용자/그룹 관리, 권한 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 파일이나 디렉터리의 소유자를 변경하는 명령어로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ls",
+      "B) chgrp",
+      "C) chown",
+      "D) umask"
+    ],
+    "correct_answer": "C",
+    "explanation": "ls: ls(List) 명령어는 현재 디렉토리에 있는 파일 및 디렉토리의 목록을 표시하는 데 사용 기본적으로는 파일 및 디렉토리의 이름만 표시하지만 , 다양한 옵션을 사용하여 보여줄 내용을 세부적으로 조절할 수 있음. chgrp: chgrp(Change Group) 명령어는 파일이나 디렉토리의 그룹 소유권을 변경하는 데 사용 일반적으로 이 명령어는 파일 또는 디렉토리의 소유자나 슈퍼 유저(root) 만 사용할 수 있음. 그룹을 변경할 때 사용자는 변경하려는 그룹의 이름을 지정해야 함. chown: chown(Change Owner) 명령어는 파일이나 디렉토리의 소유자와 그룹을 변경하는데 사용. umask: umask(User Mask)는 새로운 파일이나 디렉토리를 생성 할 때 기본적으로 설정되는 퍼미션(권한)을 제어하는 데 사용."
+  },
+  {
+    "number": 28,
+    "topic": "1주차: 리눅스 시스템 이해, 기본 설치",
+    "question": "┌──────────────────────────────┐\n다음 중 클라우드 서비스에서 이용자의 설정이 많은 순서로 나열된 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) SaaS ＞ PaaS ＞ IaaS",
+      "B) PaaS ＞ SaaS ＞ IaaS",
+      "C) Iaas ＞ PaaS ＞ Saas",
+      "D) IaaS ＞ SaaS ＞ PaaS"
+    ],
+    "correct_answer": "C",
+    "explanation": "IaaS(Infrastructure as a Service, 인프라 기반 서비스 ) PaaS(Platform as a Service, 플랫폼 기반 서비스 ) SaaS(Software as a Service, 소프트웨어 기반 서비스 ) abcdefghIjklmnoPqrS 알파벳 순서로 외우시면 편합니다 "
+  },
+  {
+    "number": 29,
+    "topic": "1주차: 리눅스 시스템 이해, 기본 설치",
+    "question": "┌──────────────────────────────┐\n다음 중 CPU 반가상화를 지원하는 가상화 기술로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) Xen",
+      "B) KVM",
+      "C) Docker",
+      "D) VirtualBox"
+    ],
+    "correct_answer": "A",
+    "explanation": "반가상화 - Xen 전가상화 - KVM "
+  },
+  {
+    "number": 30,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 네트워크 카드에 물리적으로 케이블이 연결되었는지를 점검할 때 사용하는 명령어로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ifconfig",
+      "B) ss",
+      "C) netstat",
+      "D) mii-tool"
+    ],
+    "correct_answer": "D",
+    "explanation": "mii-tool 을 옵션없이 실행하면 랜카드의 속도, duplex 모드, 연 경 상태를 보여줘서 네트워크를 점검할 때 사용하는 명령어로 알맞다 . -v 옵션을 추가하면 보다 상새한 MII 상태를 볼 수 있다. (root 권한으로 실행해야함 )"
+  },
+  {
+    "number": 31,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 시스템에 설정된 게이트웨이 주소값을 확인하는 명령어로 틀린 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) ip",
+      "B) route",
+      "C) netstat",
+      "D) ethtool"
+    ],
+    "correct_answer": "D",
+    "explanation": "ethtool 명령어는 네트워크 인터페이스 카드의 설정을 조회하고 변경하는 데 사용    게이트웨이 주소는 route 명령어입니다 . ethtool 은 물리적으로 연결된 NIC카드의 정보를 확인거지요"
+  },
+  {
+    "number": 32,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 로컬 시스템에 있는 파일을 FTP 서버에 업로드하는 경우에 사용하는 명령어로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) get",
+      "B) put",
+      "C) recv",
+      "D) hash"
+    ],
+    "correct_answer": "B",
+    "explanation": "FTP 서버에 파일을 업로드하는 명령어 = put FTP 서버에서 파일을 다운로드하는 명령어 = get"
+  },
+  {
+    "number": 33,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음은 원격지 텔넷 서버에 계정을 변경해서 접속하는 과정이다. (괄호) 안에 들어갈 옵션으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) -u",
+      "B) -n",
+      "C) -p",
+      "D) -l"
+    ],
+    "correct_answer": "D",
+    "explanation": "-u : UDP 모드로 telnet 을 실행 -n : 호스트 이름을 숫자로 변환하지 않고, 주소로 처리 -p : 원격 호스트의 포트를 지정 -l : 로그인 할 때 사용 할 사용자 이름을 지정 "
+  },
+  {
+    "number": 34,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음중 메일 서버 간의 메시지 교환에 사용되는 프로토콜로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) SNMP",
+      "B) SMTP",
+      "C) IMAP",
+      "D) POP3"
+    ],
+    "correct_answer": "B",
+    "explanation": "SMTP(Simple Mail Transfer Protocol): 인터넷에서 TCP 포트번 호 25번을 사용하여 이메일을 보내기 위해 이용되는 프로토콜이 다. SMTP 하면 바로 메일을 떠오르자 ! SNMP: 네트워크 기기의 네트워크 정보를 네트워크 관리 시스템 에 보내는데 사용되는 프로토콜 IMAP: 원격 서버로부터 TCP/IP 연결을 통해 이케일을 가져오는 데 사용하는 프로토콜 POP3: 응용 계층 인터넷 프로토콜 중 하나로 , 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는 데 사용하는 프로토콜 문제에서 메시지 교환이라고 하였기 때문에 메일을 보내는데 사 용되는 SMTP 가 정답! "
+  },
+  {
+    "number": 35,
+    "topic": "5주차: 네트워크 설정, 서비스 관리",
+    "question": "┌──────────────────────────────┐\n다음 중 X 윈도가 설치되지 않은 환경의 콘솔 창에서 사용할 수 있는 웹 브라우저로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) links",
+      "B) firefox",
+      "C) opera",
+      "D) safari"
+    ],
+    "correct_answer": "A",
+    "explanation": "Firefox, Opera, Safari 등의 웹 브라우저는 대부분 그래픽 사용 자 인터페이스 (GUI) 를 사용 Lynx, Links는 텍스트 기반의 웹 브라우저"
+  },
+  {
+    "number": 36,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음중 IPv4의 C 클래스 네트워크 주소 대역으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) 191.0.0.0 ~ 223.255.255.255",
+      "B) 192.0.0.0 ~ 223.255.255.255",
+      "C) 191.0.0.0 ~ 224.255.255.255",
+      "D) 192.0.0.0 ~ 224.255.255.255"
+    ],
+    "correct_answer": "B",
+    "explanation": "A클래스 : 0.0.0.0 ~ 127.255.255.255 B클래스 : 128.0.0.0 ~ 191.255.255.255 C클래스 : 192.0.0.0 ~ 223.255.255.255"
+  },
+  {
+    "number": 37,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 네트워크 프로토콜에 할당된 포트 번호를 확인할 수 있는 파일명으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) /etc/protocol",
+      "B) /etc/protocols",
+      "C) /etc/service",
+      "D) /etc/services"
+    ],
+    "correct_answer": "D",
+    "explanation": "'/etc/services' 파일에는 네트워크 서비스를 위한 포트의 용도 기록 이 파일은 인터넷 서비스를 위해 텍스트 형태의 이름과 원래 할 당된 포트 번호와 프로토콜 타입 간의 맵핑을 제공합니다 . "
+  },
+  {
+    "number": 38,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 OSI 모델의 전송 계층에서 사용되는 프로토콜 데이터 단위로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) Packet",
+      "B) Segment",
+      "C) frame",
+      "D) bit"
+    ],
+    "correct_answer": "B",
+    "explanation": "1계층 물리 계층 - bit 2계층 데이터 링크 계층 - frame 3계층 네트워크 계층 - packet 4계층 전송 계층 - segment "
+  },
+  {
+    "number": 39,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 인터네트워킹 장비를 OSI 모델의 하위 계층부터 나열한 순서로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) Router-Bridge-Repeater",
+      "B) Router-Repeater-Bridge",
+      "C) Repeater-Bridge-Router",
+      "D) Bridge-Repeater-Router"
+    ],
+    "correct_answer": "C",
+    "explanation": "전송계층에는 장비 없음. 물리 : 허브,리피터 데이터 : 스위치 , 브리지 네트워크 : 라우터 , L3 스위치 응용 : 게이트웨이 , L7 스위치"
+  },
+  {
+    "number": 40,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 이미지 뷰어 프로그램으로 가장 거리가 먼 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) totem",
+      "B) ImageMagicK",
+      "C) Eog",
+      "D) Gimp"
+    ],
+    "correct_answer": "A",
+    "explanation": "totem - GNOME 데스크톱 환경의 기본 동영상 플레이어 ImageMagicK - 오픈 소스 이미 처리 및 변환 도구 Eog(Eye of GNOME) - GNOME 데스크톱 환경의 기본 이미지 뷰어 Gimp - GNU 이미지 처리 프로젝트 약자. 오픈 소스 이미지 편 집 프로그램 "
+  },
+  {
+    "number": 41,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 사용자가 X 윈도 실행을 실행할 경우 관련 키 정보를 저장하는 파일로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) .Xsession",
+      "B) .Xsetup",
+      "C) .Xinitrc",
+      "D) .Xauthority"
+    ],
+    "correct_answer": "D",
+    "explanation": "~/.Xauthority 입니다 .이 파일은 사용자의 홈 디렉토리에 위치하며, X 윈도 서버와 클라이언트 간의 인증 정보를 저장하는 역할 을 합니다 ."
+  },
+  {
+    "number": 42,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 X 클라이언트를 원격지로 전송하기 위해 변경하는 환경변수로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) VISUAL",
+      "B) DISPLAY",
+      "C) TERM",
+      "D) XTERM"
+    ],
+    "correct_answer": "B",
+    "explanation": "VISUAL = 사용자의 기본 텍스트 에디터를 나타내는 환경 변수 TERM = 터미널 유형을 나타내는 환경 변수 XTERM = X 윈도우 시스템에서 사용되는 터미널 에뮬레이터의 종류를 나타내는 환경 변수"
+  },
+  {
+    "number": 43,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 X 서버에서 IP 주소가 192.168.12.22 번인 X 클라이언트를 허가하는 명령으로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) xhost 192.168.12.22",
+      "B) xhost * 192.168.12.22",
+      "C) xhost - 192.168.12.22",
+      "D) xhost add 192.168.12.22"
+    ],
+    "correct_answer": "A",
+    "explanation": "정답 1. 정확히는 xhost +IP"
+  },
+  {
+    "number": 44,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 윈도 매니저 종류로 틀린 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) Metacity",
+      "B) Enlightenment",
+      "C) Window Maker",
+      "D) XFce"
+    ],
+    "correct_answer": "D",
+    "explanation": "윈도우 매니저 Kwim, FWM\n KDE의 기본 윈도우 매니저 Metacity, enlightenment GNOME 2.x의 기본 윈도우 매니저 Window Maker 깔끔한 인터페이스와 사용의 편리 TWM 탭 윈도우 매니저 , X 윈도우 시스템에 포함된 기본 윈도우 매니 저, 최초의 ICCM 윈도우 매니저 FVWM TWM에서 파생되어 개발. 안정적이고 지속적으로 사용 되어 옴 AfterStep FVWM 을 기반으로 개발, 넥스트 스탭의 GUI와 유사한 사용자 인터페이스 제공. =================="
+  },
+  {
+    "number": 45,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 KDE에 대한 설명으로 틀린 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) Metacity 라는 윈도 매니저를 사용한다 .",
+      "B) 데스크톱 환경의 일종이다 .",
+      "C) Qt 라이브러리를 기반으로 만들어졌다 .",
+      "D) 리눅스뿐만 아니라 FreeBSD, Solaris, OS X 등도 지원 한다."
+    ],
+    "correct_answer": "A",
+    "explanation": "metacity 는 GNOME 2.x 버전의 기본 윈도우 매니저이다 . KDE의 윈도우 매니저는 kwm과 vwin을 사용한다"
+  },
+  {
+    "number": 46,
+    "topic": "7주차: 모의고사, 오답 정리",
+    "question": "┌──────────────────────────────┐\n다음 중 사용자 로그인 및 세션 관리 역할을 수행하는 X 윈도의 구성요소로 알맞은 것은?\n└──────────────────────────────┘",
+    "options": [
+      "A) 디스플레이 매니저",
+      "B) 데스크톱 환경",
+      "C) 윈도 매니저",
+      "D) 유저 인터페이스"
+    ],
+    "correct_answer": "A",
+    "explanation": "윈도 매니저: ｘ－윈도우 상에서 윈도의 배치와 표현을 담당 하는 시스템 프로그램 디스플레이 매니저 :ｘ－윈도우 구성 요소 중 사용자 로그인 및 세션 관리 수행 프로그램 "
+  }
+]
